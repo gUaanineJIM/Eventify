@@ -19,10 +19,20 @@ Route::get('attendees', function () {
     return view('events.attendees');
 })->name('attendees');
 
+Route::get('events/manage', [EventController::class, 'show'])->name('events.ManageEvents');
+
+
+
 
 //add attendees
 Route::get('/events/add-attendees', [EventController::class, 'addAttendeesForm'])->name('attendees');
 Route::post('/events/add-attendees', [EventController::class, 'storeAttendee'])->name('events.addAttendees');
+Route::get('events/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
+
+//CRUD
+Route::put('events/{event}', [EventController::class, 'update'])->name('events.update');
+Route::delete('events/{event}', [EventController::class, 'destroy'])->name('events.destroy');
+
 
 // Home Route
 Route::get('/organizerdash', [EventController::class, 'index'])->name('home');
@@ -40,3 +50,9 @@ Route::post('events/{event}/rsvp', [EventController::class, 'rsvp'])->name('even
 
 // Admin Dashboard
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('auth');
+
+//attendees crud
+// Attendees CRUD
+Route::get('/attendees/{attendee}/edit', [AttendeeController::class, 'edit'])->name('attendees.edit');
+Route::put('/attendees/{attendee}', [AttendeeController::class, 'update'])->name('attendees.update');
+Route::delete('/attendees/{attendee}', [AttendeeController::class, 'destroy'])->name('attendees.destroy');

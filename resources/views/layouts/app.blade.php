@@ -281,8 +281,7 @@
             <li><a href="{{ route('home') }}">Dashboard</a></li>
             <li><a href="{{ route('events.create') }}">Create Event</a></li>
             <li><a href="{{ route('attendees') }}">Add Attendees</a></li>
-            <li><a href="{{ route('events.index') }}">Manage Events</a></li>
-            <li><a href="{{ route('events.index') }}">Settings</a></li>
+            <li><a href="{{ route('events.ManageEvents') }}">Manage Events</a></li>
         </ul>
     </div>
 

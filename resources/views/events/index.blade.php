@@ -3,6 +3,12 @@
 @section('content')
 <h1>Upcoming Events</h1>
 
+<!-- Search Bar Form -->
+<form action="{{ route('events.index') }}" method="GET" class="search-form">
+    <input type="text" name="search" placeholder="Search by title, Category, date, or location" value="{{ request()->get('search') }}" />
+    <button type="submit" class="btn">Search</button>
+</form>
+
 @if(auth()->check() && auth()->user()->role == 'organizer')
     <a href="{{ route('events.create') }}" class="btn">Create New Event</a>
 @endif
@@ -24,7 +30,6 @@
                     <form action="{{ route('events.rsvp', $event->id) }}" method="POST">
                         @csrf
                         <button type="submit" class="rsvp-btn">RSVP</button>
-                        
                     </form>
                 @endif
             </div>

@@ -261,3 +261,119 @@ form button:hover {
     background-color: #004085;
 }
 
+
+
+
+.search-form {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.search-form input {
+    padding: 8px;
+    margin-right: 10px;
+    width: 30rem;
+}
+
+.search-form button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+
+/* General table styling */
+#MEEventTable, .attendees-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table headers */
+#MEEventTable th, .attendees-table th {
+    background-color: #BCCCDC   ;
+    color: white;
+    padding: 12px 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Table rows */
+#MEEventTable td, .attendees-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row coloring */
+#MEEventTable tr:nth-child(even), .attendees-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect on rows */
+#MEEventTable tr:hover, .attendees-table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Actions buttons */
+.MEEditLink {
+    color: #007BFF;
+    text-decoration: none;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.MEEditLink:hover {
+    text-decoration: underline;
+}
+
+.MEDeleteButton {
+    background-color: #FF4C4C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.MEDeleteButton:hover {
+    background-color: #FF0000;
+}
+
+/* Attendees table styling */
+.attendees-table {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+.attendees-table th, .attendees-table td {
+    text-align: center;
+}
+
+.attendees-table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #MEEventTable, .attendees-table {
+        font-size: 14px;
+    }
+    .MEDeleteButton, .MEEditLink {
+        font-size: 12px;
+    }
+}

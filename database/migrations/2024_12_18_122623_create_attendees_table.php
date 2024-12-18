@@ -10,8 +10,9 @@ class CreateAttendeesTable extends Migration
     {
         Schema::create('attendees', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('event_id')->constrained()->onDelete('cascade');
             $table->string('name');
+            $table->enum('rsvp_status', ['Yes', 'No', 'Maybe', 'Undecided']);
+            $table->foreignId('event_id')->constrained()->onDelete('cascade'); // Ensure attendees belong to an event
             $table->timestamps();
         });
     }

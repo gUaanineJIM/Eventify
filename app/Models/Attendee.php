@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Attendee extends Model
 {
     use HasFactory;
+    use HasFactory;
 
-    protected $fillable = ['event_id', 'name'];
+    
+
+    protected $fillable = ['event_id', 'name', 'rsvp_status'];
 
     public function event()
     {
