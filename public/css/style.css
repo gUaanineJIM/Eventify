@@ -1,0 +1,263 @@
+/* public/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007BFF;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+.att-container {
+    padding: 30px;
+    background-color: #f4f7fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.att-heading {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.att-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 5rem;
+    margin-right: 5rem;    
+}
+
+.att-form-group {
+    margin-bottom: 15px;
+}
+
+.att-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.att-select, .att-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.att-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.att-btn:hover {
+    background-color: #0056b3;
+}
+
+.att-subheading {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.att-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 20px; /* Space between event cards */
+    justify-content: center; /* Centers the event cards horizontally */
+    margin-top: 20px;
+}
+
+.att-event-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 45%; /* Adjust the width for side-by-side layout */
+}
+
+.att-event-title {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.att-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.att-table th, .att-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.attendee-name {
+    font-size: 1rem;
+    color: #333;
+}
+
+.att-empty {
+    font-size: 1rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* Make sure the tables stack on smaller screens */
+@media (max-width: 768px) {
+    .att-event-card {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
+
+
+
+
+/* General container */
+.create-container {
+    padding: 100px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+
+/* Heading */
+.create-heading {
+    font-size: 2rem;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.create-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.create-form-group {
+    margin-bottom: 20px;
+}
+
+.create-label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.create-input, .create-textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.create-textarea {
+    height: 150px;
+}
+
+.create-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-btn:hover {
+    background-color: #0056b3;
+}
+
+.create-btn:active {
+    background-color: #004085;
+}
+
