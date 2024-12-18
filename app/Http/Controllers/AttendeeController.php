@@ -51,4 +51,34 @@ class AttendeeController extends Controller
 
         return redirect()->route('events.ManageEvents')->with('success', 'Attendee deleted successfully');
     }
+
+    public function checkName(Request $request)
+    {
+        // Fetch the attendee by name
+        $attendee = Attendee::where('name', $request->input('name'))->first();
+
+        if ($attendee) {
+            // Return the view with the attendee and show the RSVP form
+            return view('attendees.checkAttendee', compact('attendee'));
+        }
+
+        // If not found, return a message indicating no match
+        return redirect()->back()->with('error', 'Attendee not found');
+    }
+
+    public function updateRsvp(Request $request, $id)
+    {
+        // Validate RSVP status input
+        $request->validate([
+            'rsvp_status' => 'required|in:Yes,No,Maybe,Undecided',
+        ]);
+
+        // Find the attendee and update the RSVP status
+        $attendee = Attendee::findOrFail($id);
+        $attendee->update([
+            'rsvp_status' => $request->input('rsvp_status'),
+        ]);
+
+        return redirect()->route('thankyou')->with('success', 'RSVP status updated successfully');
+    }
 }

@@ -1,3 +1,4 @@
+<!-- resources/views/events/checkAttendee.blade.php -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -5,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | Eventify</title>
+    <title>Check Attendee | Eventify</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -26,30 +27,6 @@
             max-width: 900px;
             width: 90%;
             overflow: hidden;
-        }
-
-        .image-section {
-            flex: 1;
-            background: url('path/to/your/image.jpg') no-repeat center center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            color: white;
-            text-align: center;
-        }
-
-        .image-section h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: black;
-        }
-
-        .image-section p {
-            font-size: 1rem;
-            line-height: 1.5;
-            color: black;
         }
 
         .form-section {
@@ -111,10 +88,8 @@
                 flex-direction: column;
             }
 
-            .image-section {
-                height: 200px;
-                text-align: center;
-                padding: 20px;
+            .form-section {
+                margin-top: 4rem;
             }
         }
     </style>
@@ -122,26 +97,31 @@
 
 <body>
     <div class="register-container">
-        <!-- Image and Intro Section -->
-        <div class="image-section">
-        <img src="{{ asset('images/eventify.png') }}" alt="Eventify Logo">
-            <p>Your journey to unforgettable events starts here. Join us today and explore endless possibilities.</p>
-        </div>
-
         <!-- Form Section -->
         <div class="form-section">
-            <h1>Log into Your Account</h1>
-            <form action="{{ url('login') }}" method="POST">
-                @csrf
-                <input type="email" name="email" placeholder="Email" class="form-control" required>
-                <input type="password" name="password" placeholder="Password" class="form-control" required>
-                <button type="submit">Login</button>
-            </form>
-            <div class="footer">
-                Don't have an account? <a href="{{ url('register') }}">Register here</a>
-                <br>
-                <h5></h5><a href="javascript:history.back()" class="back-button">Back</a>
+            <h1>Check Your Attendance</h1>
+
+            <!-- Display Attendee Name -->
+            <div class="mb-3">
+                <label for="attendee_name" class="form-label">Attendee Name</label>
+                <input type="text" id="attendee_name" class="form-control" value="{{ $attendee->name }}" readonly>
             </div>
+
+            <!-- RSVP Status Form -->
+            <form action="{{ route('updateRsvp', $attendee->id) }}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="mb-3">
+                    <label for="rsvp_status" class="form-label">RSVP Status</label>
+                    <select name="rsvp_status" id="rsvp_status" class="form-control" required>
+                        <option value="Yes" {{ $attendee->rsvp_status == 'Yes' ? 'selected' : '' }}>Yes</option>
+                        <option value="No" {{ $attendee->rsvp_status == 'No' ? 'selected' : '' }}>No</option>
+                        <option value="Maybe" {{ $attendee->rsvp_status == 'Maybe' ? 'selected' : '' }}>Maybe</option>
+                        <option value="Undecided" {{ $attendee->rsvp_status == 'Undecided' ? 'selected' : '' }}>Undecided</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Update RSVP</button>
+            </form>
         </div>
     </div>
 </body>

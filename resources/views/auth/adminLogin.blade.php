@@ -125,7 +125,7 @@
         <!-- Image and Intro Section -->
         <div class="image-section">
         <img src="{{ asset('images/eventify.png') }}" alt="Eventify Logo">
-            <p>Your journey to unforgettable events starts here. Join us today and explore endless possibilities.</p>
+            <p>Welcome Back Admin!</p>
         </div>
 
         <!-- Form Section -->

@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | Eventify</title>
+    <title>Check Attendee | Eventify</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -124,23 +123,22 @@
     <div class="register-container">
         <!-- Image and Intro Section -->
         <div class="image-section">
-        <img src="{{ asset('images/eventify.png') }}" alt="Eventify Logo">
-            <p>Your journey to unforgettable events starts here. Join us today and explore endless possibilities.</p>
+            <img src="{{ asset('images/eventify.png') }}" alt="Eventify Logo">
+            <p>Your journey to unforgettable events starts here. Enter your name and get started!</p>
         </div>
 
         <!-- Form Section -->
         <div class="form-section">
-            <h1>Log into Your Account</h1>
-            <form action="{{ url('login') }}" method="POST">
+            <h1>Check Your Attendance</h1>
+            <form action="{{ route('checkname') }}" method="POST">
                 @csrf
-                <input type="email" name="email" placeholder="Email" class="form-control" required>
-                <input type="password" name="password" placeholder="Password" class="form-control" required>
-                <button type="submit">Login</button>
+                <input type="text" name="name" placeholder="Enter Your Name" class="form-control" required>
+                <button type="submit">Check</button>
             </form>
             <div class="footer">
-                Don't have an account? <a href="{{ url('register') }}">Register here</a>
+                Organizer? <a href="{{ url('login') }}">Log in here</a>
                 <br>
-                <h5></h5><a href="javascript:history.back()" class="back-button">Back</a>
+                <a href="javascript:history.back()" class="back-button">Back</a>
             </div>
         </div>
     </div>

@@ -5,10 +5,16 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AttendeeController;
+use App\Http\Controllers\RoleController;
 
 Route::get('/', function () {
+    return view('role');
+})->name('role');
+
+Route::get('/index', function () {
     return view('indexLanding');
-})->name('index');
+})->name('indexLanding');
+
 
 // create event
 Route::get('create', function () {
@@ -21,6 +27,14 @@ Route::get('attendees', function () {
 
 Route::get('events/manage', [EventController::class, 'show'])->name('events.ManageEvents');
 
+//check attendees name if presente on the entered name by the organizer
+Route::get('checkname', function () {
+    return view('attendees.CheckName');
+})->name('checkname');
+
+Route::get('thankyou', function () {
+    return view('attendees.Thankyou');
+})->name('thankyou');
 
 
 
@@ -28,6 +42,10 @@ Route::get('events/manage', [EventController::class, 'show'])->name('events.Mana
 Route::get('/events/add-attendees', [EventController::class, 'addAttendeesForm'])->name('attendees');
 Route::post('/events/add-attendees', [EventController::class, 'storeAttendee'])->name('events.addAttendees');
 Route::get('events/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
+//rsvp
+Route::post('checkname', [AttendeeController::class, 'checkName'])->name('checkname');
+Route::put('attendees/{id}/rsvp', [AttendeeController::class, 'updateRsvp'])->name('updateRsvp');
+
 
 //CRUD
 Route::put('events/{event}', [EventController::class, 'update'])->name('events.update');
@@ -56,3 +74,5 @@ Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admi
 Route::get('/attendees/{attendee}/edit', [AttendeeController::class, 'edit'])->name('attendees.edit');
 Route::put('/attendees/{attendee}', [AttendeeController::class, 'update'])->name('attendees.update');
 Route::delete('/attendees/{attendee}', [AttendeeController::class, 'destroy'])->name('attendees.destroy');
+
+
