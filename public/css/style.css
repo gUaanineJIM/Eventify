@@ -461,3 +461,98 @@ form button:hover {
         font-size: 12px;
     }
 }
+
+
+
+
+
+/* Styling for the tables */
+.EV-table, .EV-attendees-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Styling for table headers */
+.EV-table th, .EV-attendees-table th {
+    background-color: #BCCCDC;
+    color: white;
+    padding: 12px 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Styling for table cells */
+.EV-table td, .EV-attendees-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row coloring */
+.EV-table tr:nth-child(even), .EV-attendees-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect on rows */
+.EV-table tr:hover, .EV-attendees-table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Styling for the Edit link */
+.EV-MEEditLink {
+    color: #007BFF;
+    text-decoration: none;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.EV-MEEditLink:hover {
+    text-decoration: underline;
+}
+
+/* Styling for the Delete button */
+.EV-MEDeleteButton {
+    background-color: #FF4C4C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.EV-MEDeleteButton:hover {
+    background-color: #FF0000;
+}
+
+/* Styling for the attendees table (optional) */
+.EV-attendees-table {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+.EV-attendees-table th, .EV-attendees-table td {
+    text-align: center;
+}
+
+/* Header style for the attendees table */
+.EV-attendees-table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .EV-table, .EV-attendees-table {
+        font-size: 14px;
+    }
+    .EV-MEDeleteButton, .EV-MEEditLink {
+        font-size: 12px;
+    }
+}

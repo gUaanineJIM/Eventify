@@ -274,15 +274,15 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <h2>Organizer</h2>
+        <h2>ADMIN</h2>
         <hr>
         <hr>
         <ul>
         <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li><a href="{{ route('admin.ManageEvent') }}">Manage Events</a></li>
             <li><a href="{{ route('admin.ManageAttendeesAdmin') }}">Manage Attendees</a></li>
-            <li><a href="{{ route('dashboard') }}">Manage Users</a></li>
-            <li><a href="{{ route('dashboard') }}">Settings</a></li>
+            <li><a href="{{ route('users.ManageUsersLog') }}">Manage Users</a></li>
+            
         </ul>
     </div>
 

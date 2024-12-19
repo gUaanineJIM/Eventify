@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminManageAttendees;
 use App\Http\Controllers\UpdateAttendees;
+use App\Http\Controllers\UserUpdatesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
@@ -87,3 +88,19 @@ Route::get('/admin/manage-events', [UpdateAttendees::class, 'index'])->name('adm
 Route::get('/admin/attendees/{id}/edit', [UpdateAttendees::class, 'edit'])->name('admin.attendees.edit');
 Route::put('/admin/attendees/{id}', [UpdateAttendees::class, 'update'])->name('admin.attendees.update');
 Route::delete('/admin/attendees/{id}', [UpdateAttendees::class, 'destroy'])->name('admin.attendees.destroy');
+
+Route::resource('users', UserUpdatesController::class);
+
+
+// users
+// Show all users
+Route::get('/users', [UserUpdatesController::class, 'index'])->name('users.ManageUsersLog');
+
+// Show the form for editing a user
+Route::get('/users/{id}/edit', [UserUpdatesController::class, 'edit'])->name('users.edit');
+
+// Update a user
+Route::put('/users/{id}', [UserUpdatesController::class, 'update'])->name('users.update');
+
+// Delete a user
+Route::delete('/users/{id}', [UserUpdatesController::class, 'destroy'])->name('users.destroy');
