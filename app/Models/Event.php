@@ -11,7 +11,7 @@ class Event extends Model
 
     protected $table = 'events';
 
-    
+
     protected $fillable = [
         'title',
         'description',
@@ -22,9 +22,9 @@ class Event extends Model
     ];
 
     public function attendees()
-{
-    return $this->hasMany(Attendee::class);
-}
+    {
+        return $this->hasMany(Attendee::class);
+    }
 
 
 }

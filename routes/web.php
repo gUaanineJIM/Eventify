@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminManageAttendees;
+use App\Http\Controllers\UpdateAttendees;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
@@ -68,7 +71,19 @@ Route::get('/attendees/{attendee}/edit', [AttendeeController::class, 'edit'])->n
 Route::put('/attendees/{attendee}', [AttendeeController::class, 'update'])->name('attendees.update');
 Route::delete('/attendees/{attendee}', [AttendeeController::class, 'destroy'])->name('attendees.destroy');
 
-Route::get('dashboard', function () {
-    return view('admin.dashboard');
-})->name('dashboard');
 
+Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+
+Route::get('admin/manage', [AdminController::class, 'show'])->name('admin.ManageEvent');
+
+
+Route::get('manage/{id}/edit', [AdminController::class, 'edit'])->name('admin.editing');
+
+Route::put('admin/{event}', [AdminController::class, 'update'])->name('admin.updating');
+Route::delete('admin/{event}', [AdminController::class, 'destroy'])->name('admin.destroying');
+
+//admin edit attendees
+Route::get('/admin/manage-events', [UpdateAttendees::class, 'index'])->name('admin.ManageAttendeesAdmin');
+Route::get('/admin/attendees/{id}/edit', [UpdateAttendees::class, 'edit'])->name('admin.attendees.edit');
+Route::put('/admin/attendees/{id}', [UpdateAttendees::class, 'update'])->name('admin.attendees.update');
+Route::delete('/admin/attendees/{id}', [UpdateAttendees::class, 'destroy'])->name('admin.attendees.destroy');

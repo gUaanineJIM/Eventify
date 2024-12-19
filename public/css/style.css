@@ -377,3 +377,87 @@ form button:hover {
         font-size: 12px;
     }
 }
+
+
+
+
+.ADMI-table, .ADMI-attendees-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ADMI-table th, .ADMI-attendees-table th {
+    background-color: #BCCCDC;
+    color: white;
+    padding: 12px 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.ADMI-table td, .ADMI-attendees-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.ADMI-table tr:nth-child(even), .ADMI-attendees-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.ADMI-table tr:hover, .ADMI-attendees-table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.ADMI-MEEditLink {
+    color: #007BFF;
+    text-decoration: none;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.ADMI-MEEditLink:hover {
+    text-decoration: underline;
+}
+
+.ADMI-MEDeleteButton {
+    background-color: #FF4C4C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ADMI-MEDeleteButton:hover {
+    background-color: #FF0000;
+}
+
+.ADMI-attendees-table {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+.ADMI-attendees-table th, .ADMI-attendees-table td {
+    text-align: center;
+}
+
+.ADMI-attendees-table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .ADMI-table, .ADMI-attendees-table {
+        font-size: 14px;
+    }
+    .ADMI-MEDeleteButton, .ADMI-MEEditLink {
+        font-size: 12px;
+    }
+}

@@ -279,8 +279,8 @@
         <hr>
         <ul>
         <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li><a href="{{ route('dashboard') }}">Manage Events</a></li>
-            <li><a href="{{ route('dashboard') }}">Manage Attendees</a></li>
+            <li><a href="{{ route('admin.ManageEvent') }}">Manage Events</a></li>
+            <li><a href="{{ route('admin.ManageAttendeesAdmin') }}">Manage Attendees</a></li>
             <li><a href="{{ route('dashboard') }}">Manage Users</a></li>
             <li><a href="{{ route('dashboard') }}">Settings</a></li>
         </ul>
