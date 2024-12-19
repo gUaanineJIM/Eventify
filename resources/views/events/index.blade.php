@@ -26,12 +26,10 @@
                 <p><strong>Category:</strong> {{ $event->category }}</p>
             </div>
             <div class="card-footer">
-                @if(auth()->check() && auth()->user()->role == 'attendee')
-                    <form action="{{ route('events.rsvp', $event->id) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="rsvp-btn">RSVP</button>
-                    </form>
-                @endif
+                <a href="{{ route('events.ManageEvents') }}">
+                <button type="submit" class="rsvp-btn">VIEW RSVP</button>
+                </a>
+                        
             </div>
         </div>
     @endforeach

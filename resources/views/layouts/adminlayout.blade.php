@@ -249,13 +249,13 @@
         </a>
         <div class="navbar-nav">
             <div class="nav-item">
-                <a>Welcome!</a>
+                <a>Welcome, Admin!</a>
             </div>
 
             @if(auth()->check())
                 <div class="nav-item dropdown">
                     <span class="user-profile">
-                        {{ auth()->user()->name }}
+                        Log Out
                     </span>
                     <div class="dropdown-content">
                         <a href="{{ route('role') }}">Logout</a>
@@ -278,9 +278,11 @@
         <hr>
         <hr>
         <ul>
-            <li><a href="{{ route('home') }}">Dashboard</a></li>
-            <li><a href="{{ route('events.create') }}">Organizer Accounts</a></li>
-            <li><a href="{{ route('attendees') }}">Events & Attendees</a></li>
+        <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('dashboard') }}">Manage Events</a></li>
+            <li><a href="{{ route('dashboard') }}">Manage Attendees</a></li>
+            <li><a href="{{ route('dashboard') }}">Manage Users</a></li>
+            <li><a href="{{ route('dashboard') }}">Settings</a></li>
         </ul>
     </div>
 

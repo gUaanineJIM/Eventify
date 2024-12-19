@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +55,7 @@
             flex: 1;
             padding: 40px 30px;
             align-items: center;
-            margin-top: 8rem;
+            margin-top: 4rem;
         }
 
         .form-section h1 {
@@ -124,23 +123,29 @@
     <div class="register-container">
         <!-- Image and Intro Section -->
         <div class="image-section">
-        <img src="{{ asset('images/eventify.png') }}" alt="Eventify Logo">
-            <p>Welcome Back Admin!</p>
+            <img src="{{ asset('images/eventify.png') }}" alt="Eventify Logo">
+            <p>Your journey to unforgettable events starts here. Join us today and explore endless possibilities.</p>
         </div>
 
         <!-- Form Section -->
         <div class="form-section">
-            <h1>Log into Your Account</h1>
-            <form action="{{ url('login') }}" method="POST">
+            <h1>Log in as Admin</h1>
+            <form method="POST" action="{{ route('admin.login') }}">
                 @csrf
-                <input type="email" name="email" placeholder="Email" class="form-control" required>
-                <input type="password" name="password" placeholder="Password" class="form-control" required>
-                <button type="submit">Login</button>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
             </form>
             <div class="footer">
-                Don't have an account? <a href="{{ url('register') }}">Register here</a>
+            Don't have an account? <a href="{{ route('admin.register') }}">Register here</a>
                 <br>
-                <h5></h5><a href="javascript:history.back()" class="back-button">Back</a>
+                <a href="javascript:history.back()" class="back-button">Back</a>
             </div>
         </div>
     </div>

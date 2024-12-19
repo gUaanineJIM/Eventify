@@ -60,17 +60,20 @@
 
         .form-section a {
             display: inline-block;
-            margin: 15px 30px; /* Increased the vertical margin to add more space between buttons */
+            margin: 15px 30px;
+            /* Increased the vertical margin to add more space between buttons */
             padding: 12px 30px;
             font-size: 1em;
             text-align: center;
             color: #fff;
-            background-color: #007BFF; /* Same blue color for both buttons */
+            background-color: #007BFF;
+            /* Same blue color for both buttons */
             border: none;
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s;
-            text-decoration: none; /* Ensures the link looks like a button */
+            text-decoration: none;
+            /* Ensures the link looks like a button */
         }
 
 
@@ -167,10 +170,10 @@
         <div class="form-section">
             <h1>Welcome to Eventify</h1>
             <p>Your ultimate event management system</p>
-            <p>Select your role</p>
-            <a href="adminLogin">Admin</a>
-            <a href="register">Organizer</a>
-            <a href="checkname">RSVP</a>
+            <p>Proceed with?</p>
+            <a href="{{ route('admin.register') }}">Admin</a>
+            <a href="{{ route('register') }}">Organizer</a>
+            <a href="{{ route('checkname') }}">RSVP</a>
         </div>
     </div>
 
